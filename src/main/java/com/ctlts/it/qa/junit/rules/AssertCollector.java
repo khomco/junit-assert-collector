@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
  * Created by CenturyLink Technology Solutions.
  *
  * <p>
- * The ValidatorCollector is an extension of the {@link org.junit.rules.ErrorCollector}.  This class
+ * This is an extension of the {@link org.junit.rules.ErrorCollector}.  This class
  * contains a majority of the {@link org.junit.Assert} class methods. It is intended to provide cleaner
  * code when it is desired to conditionally collect AssertionErrors.  If an error is incurred when calling
  * methods on this class, the AssertionError will be collected and all errors will be reported at once.
