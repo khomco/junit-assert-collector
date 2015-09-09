@@ -11,10 +11,10 @@ import org.junit.rules.ExpectedException;
  *
  * @author Keith.Homco
  */
-public class ValidatorCollectorTest {
+public class AssertCollectorTest {
 
     @Rule
-    public ValidatorCollector validatorCollector = new ValidatorCollector();
+    public AssertCollector assertCollector = new AssertCollector();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
@@ -25,12 +25,12 @@ public class ValidatorCollectorTest {
 
     @Test
      public void testAssertTrueThatSucceedsWithoutMessage() {
-        validatorCollector.assertTrue(true == true);
+        assertCollector.assertTrue(true == true);
     }
 
     @Test
     public void testAssertTrueThatSucceedsWithMessage() {
-        validatorCollector.assertTrue("Assertion Message", true == true);
+        assertCollector.assertTrue("Assertion Message", true == true);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(IsEmptyString.isEmptyOrNullString());
 
-        validatorCollector.assertTrue(false == true);
+        assertCollector.assertTrue(false == true);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(StringStartsWith.startsWith("Assertion Message"));
 
-        validatorCollector.assertTrue("Assertion Message", false == true);
+        assertCollector.assertTrue("Assertion Message", false == true);
     }
 
     /**
@@ -57,12 +57,12 @@ public class ValidatorCollectorTest {
 
     @Test
     public void testAssertFalseThatSucceedsWithoutMessage() {
-        validatorCollector.assertFalse(false == true);
+        assertCollector.assertFalse(false == true);
     }
 
     @Test
     public void testAssertFalseThatSucceedsWithMessage() {
-        validatorCollector.assertFalse("Assertion Message", false == true);
+        assertCollector.assertFalse("Assertion Message", false == true);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(IsEmptyString.isEmptyOrNullString());
 
-        validatorCollector.assertFalse(true == true);
+        assertCollector.assertFalse(true == true);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(StringStartsWith.startsWith("Assertion Message"));
 
-        validatorCollector.assertFalse("Assertion Message", true == true);
+        assertCollector.assertFalse("Assertion Message", true == true);
     }
 
     /**
@@ -89,12 +89,12 @@ public class ValidatorCollectorTest {
 
     @Test
      public void testAssertEqualsThatSucceedsWithoutMessage() {
-        validatorCollector.assertEquals(true, true);
+        assertCollector.assertEquals(true, true);
     }
 
     @Test
     public void testAssertEqualsThatSucceedsWithMessage() {
-        validatorCollector.assertEquals("Assertion Message", true, true);
+        assertCollector.assertEquals("Assertion Message", true, true);
     }
 
     @Test
@@ -103,7 +103,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage("expected:<false> but was:<true>");
 
-        validatorCollector.assertEquals(false, true);
+        assertCollector.assertEquals(false, true);
     }
 
     @Test
@@ -112,7 +112,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(StringStartsWith.startsWith("Assertion Message"));
 
-        validatorCollector.assertEquals("Assertion Message", false, true);
+        assertCollector.assertEquals("Assertion Message", false, true);
     }
 
     /**
@@ -121,12 +121,12 @@ public class ValidatorCollectorTest {
 
     @Test
     public void testAssertNotEqualsThatSucceedsWithoutMessage() {
-        validatorCollector.assertNotEquals(false, true);
+        assertCollector.assertNotEquals(false, true);
     }
 
     @Test
     public void testAssertNotEqualsThatSucceedsWithMessage() {
-        validatorCollector.assertNotEquals("Assertion Message", false, true);
+        assertCollector.assertNotEquals("Assertion Message", false, true);
     }
 
     @Test
@@ -135,7 +135,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage("Values should be different. Actual: true");
 
-        validatorCollector.assertNotEquals(true, true);
+        assertCollector.assertNotEquals(true, true);
     }
 
     @Test
@@ -144,7 +144,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(StringStartsWith.startsWith("Assertion Message"));
 
-        validatorCollector.assertNotEquals("Assertion Message", true, true);
+        assertCollector.assertNotEquals("Assertion Message", true, true);
     }
 
     /**
@@ -153,12 +153,12 @@ public class ValidatorCollectorTest {
 
     @Test
     public void testAssertNullThatSucceedsWithoutMessage() {
-        validatorCollector.assertNull(null);
+        assertCollector.assertNull(null);
     }
 
     @Test
     public void testAssertNullThatSucceedsWithMessage() {
-        validatorCollector.assertNull("Assertion Message", null);
+        assertCollector.assertNull("Assertion Message", null);
     }
 
     @Test
@@ -167,7 +167,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(StringStartsWith.startsWith("expected null, but was:"));
 
-        validatorCollector.assertNull(new Object());
+        assertCollector.assertNull(new Object());
     }
 
     @Test
@@ -176,7 +176,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(StringStartsWith.startsWith("Assertion Message"));
 
-        validatorCollector.assertNull("Assertion Message", new Object());
+        assertCollector.assertNull("Assertion Message", new Object());
     }
 
     /**
@@ -185,12 +185,12 @@ public class ValidatorCollectorTest {
 
     @Test
     public void testAssertNotNullThatSucceedsWithoutMessage() {
-        validatorCollector.assertNotNull(new Object());
+        assertCollector.assertNotNull(new Object());
     }
 
     @Test
     public void testAssertNotNullThatSucceedsWithMessage() {
-        validatorCollector.assertNotNull("Assertion Message", new Object());
+        assertCollector.assertNotNull("Assertion Message", new Object());
     }
 
     @Test
@@ -199,7 +199,7 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(IsEmptyString.isEmptyOrNullString());
 
-        validatorCollector.assertNotNull(null);
+        assertCollector.assertNotNull(null);
     }
 
     @Test
@@ -208,6 +208,6 @@ public class ValidatorCollectorTest {
         thrown.expect(AssertionError.class);
         thrown.expectMessage(StringStartsWith.startsWith("Assertion Message"));
 
-        validatorCollector.assertNotNull("Assertion Message", null);
+        assertCollector.assertNotNull("Assertion Message", null);
     }
 }

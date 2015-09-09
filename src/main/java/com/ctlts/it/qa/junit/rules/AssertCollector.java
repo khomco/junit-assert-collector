@@ -16,7 +16,7 @@ import java.util.concurrent.Callable;
  *
  * @author Keith.Homco
  */
-public final class ValidatorCollector extends ErrorCollector {
+public final class AssertCollector extends ErrorCollector {
 
     /**
      * Performs {@link Assert#assertTrue(String, boolean)} and if it fails,
