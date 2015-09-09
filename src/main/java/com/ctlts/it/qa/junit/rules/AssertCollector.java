@@ -26,7 +26,6 @@ public final class AssertCollector extends ErrorCollector {
      */
     public void assertTrue(final String message, final boolean condition) {
         checkSucceeds(new Callable<Object>() {
-            @Override
             public Object call() throws Exception {
                 Assert.assertTrue(message, condition);
                 return message;
@@ -52,7 +51,6 @@ public final class AssertCollector extends ErrorCollector {
      */
     public void assertFalse(final String message, final boolean condition) {
         checkSucceeds(new Callable<Object>() {
-            @Override
             public Object call() throws Exception {
                 Assert.assertFalse(message, condition);
                 return message;
@@ -78,7 +76,6 @@ public final class AssertCollector extends ErrorCollector {
      */
     public void assertEquals(final String message, final Object expected, final Object actual) {
         checkSucceeds(new Callable<Object>() {
-            @Override
             public Object call() throws Exception {
                 Assert.assertEquals(message, expected, actual);
                 return message;
@@ -104,7 +101,6 @@ public final class AssertCollector extends ErrorCollector {
      */
     public void assertNotEquals(final String message, final Object first, final Object second) {
         checkSucceeds(new Callable<Object>() {
-            @Override
             public Object call() throws Exception {
                 Assert.assertNotEquals(message, first, second);
                 return message;
@@ -130,7 +126,6 @@ public final class AssertCollector extends ErrorCollector {
      */
     public void assertNull(final String message, final Object object) {
         checkSucceeds(new Callable<Object>() {
-            @Override
             public Object call() throws Exception {
                 Assert.assertNull(message, object);
                 return message;
@@ -156,7 +151,6 @@ public final class AssertCollector extends ErrorCollector {
      */
     public void assertNotNull(final String message, final Object object) {
         checkSucceeds(new Callable<Object>() {
-            @Override
             public Object call() throws Exception {
                 Assert.assertNotNull(message, object);
                 return message;
