@@ -31,8 +31,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>2.5.3</version>
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>fakerepo</id>
+            <name>Local file system</name>
+            <url>file:///Users/khomco/projects/local-repo/repo</url>
+        </repository>
+        <snapshotRepository>
+            <id>fakesnapshotrepo</id>
+            <name>Local file system</name>
+            <url>file:///Users/khomco/projects/local-repo/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
