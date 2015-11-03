@@ -4,7 +4,7 @@
 
     <groupId>com.homconet</groupId>
     <artifactId>junit-assert-collector</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <dependencies>
         <dependency>
@@ -23,7 +23,8 @@
         <connection>scm:git:git@github.com:khomco/junit-assert-collector.git</connection>
         <url>scm:git:git@github.com:khomco/junit-assert-collector.git</url>
         <developerConnection>scm:git:git@github.com:khomco/junit-assert-collector.git</developerConnection>
-    </scm>
+      <tag>junit-assert-collector-1.0.1</tag>
+  </scm>
 
     <build>
         <plugins>
